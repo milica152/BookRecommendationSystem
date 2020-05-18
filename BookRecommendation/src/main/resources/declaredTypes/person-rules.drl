@@ -1,0 +1,37 @@
+package rules
+
+import com.model.Book
+import com.model.PersonInfo
+import java.util.Date
+import com.model.Age
+
+rule "Person with age less than or equal 12 is KID"
+    when
+        $p: PersonInfo(yearsOld <= 12)
+    then
+        $p.setAge(Age.KID);
+end
+
+
+rule "Person with age more then 12 and less than 22 is TEENAGER"
+    when
+        $p: PersonInfo(yearsOld > 12, yearsOld < 22)
+    then
+        $p.setAge(Age.TEENAGER);
+end
+
+
+rule "Person with age more than or equal 22 and less than 59 is ADULT"
+    when
+        $p: PersonInfo(yearsOld >= 22, yearsOld < 59)
+    then
+        $p.setAge(Age.ADULT);
+end
+
+
+rule "Person with age more than or equal 59 is ELDER"
+    when
+        $p: PersonInfo(yearsOld >= 59)
+    then
+        $p.setAge(Age.ELDER);
+end

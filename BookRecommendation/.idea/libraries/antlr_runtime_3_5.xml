@@ -1,0 +1,52 @@
+<component name="libraryTable">
+  <library name="antlr-runtime-3.5">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/antlr-runtime-3.5.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/xstream-1.4.9.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/joda-time-1.6.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jbpm-flow-builder-6.5.0.Final.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/kie-internal-6.5.0.Final.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/kie-api-6.5.0.Final.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/xmlpull-1.1.3.1.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jbpm-bpmn2-6.5.0.Final.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/drools-core-6.5.0.Final.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/drools-compiler-6.5.0.Final.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/commons-codec-1.4.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jbpm-flow-6.5.0.Final.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/exist-installer-5.1.1.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/mvel2-2.2.8.Final.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/xpp3_min-1.1.4c.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/slf4j-api-1.7.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/kie-api-7.1.0.Final.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/ecj-4.4.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/protobuf-java-2.6.0.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring/HdrHistogram-2.1.12.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring/jackson-databind-2.11.0.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring/snakeyaml-1.26.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring/jackson-annotations-2.11.0.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring/jul-to-slf4j-1.7.30.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring/spring-expression-5.2.6.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring/LatencyUtils-2.0.3.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring/log4j-api-2.13.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring/spring-boot-actuator-autoconfigure-2.3.0.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring/log4j-to-slf4j-2.13.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring/slf4j-api-1.7.25.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring/spring-core-5.2.6.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring/spring-boot-2.3.0.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring/jakarta.annotation-api-1.3.5.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring/spring-aop-5.2.6.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring/spring-jcl-5.2.6.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring/logback-core-1.2.3.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring/jackson-datatype-jsr310-2.11.0.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring/jackson-core-2.11.0.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring/spring-boot-autoconfigure-2.3.0.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring/spring-beans-5.2.6.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring/spring-context-5.2.6.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring/spring-boot-actuator-2.3.0.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring/micrometer-core-1.5.1.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring/logback-classic-1.2.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

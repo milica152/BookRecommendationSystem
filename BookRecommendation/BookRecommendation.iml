@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="EclipseModuleManager">
+    <libelement value="jar://$MODULE_DIR$/lib/hamcrest-all-1.3.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/junit-4.12.jar!/" />
+    <conelement value="DROOLS/Drools" />
+    <src_description expected_position="0">
+      <src_folder value="file://$MODULE_DIR$/src/main/java" expected_position="0" />
+      <src_folder value="file://$MODULE_DIR$/src/main/resources" expected_position="1" />
+      <src_folder value="file://$MODULE_DIR$/src/test/java" expected_position="2" />
+    </src_description>
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="library" name="DROOLS/Drools" level="application" />
+    <orderEntry type="module-library">
+      <library name="hamcrest-all-1.3.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/hamcrest-all-1.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="junit-4.12.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/junit-4.12.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="antlr-runtime-3.5" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/spring/spring-beans-5.2.6.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/spring/jackson-annotations-2.11.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/spring/jackson-core-2.11.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/spring/spring-jcl-5.2.6.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/spring/log4j-api-2.13.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/spring/spring-aop-5.2.6.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/spring/spring-core-5.2.6.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/spring/jul-to-slf4j-1.7.30.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/spring/spring-expression-5.2.6.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/spring/spring-context-5.2.6.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/spring/jakarta.annotation-api-1.3.5.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/spring/jackson-datatype-jsr310-2.11.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/spring/log4j-to-slf4j-2.13.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/spring/logback-core-1.2.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/spring/snakeyaml-1.26.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/spring/LatencyUtils-2.0.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/spring/spring-boot-actuator-autoconfigure-2.3.0.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/spring/jackson-databind-2.11.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/spring/logback-classic-1.2.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/spring/spring-boot-2.3.0.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/spring/spring-boot-actuator-2.3.0.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/spring/micrometer-core-1.5.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/spring/slf4j-api-1.7.25.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/spring/HdrHistogram-2.1.12.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/spring/spring-boot-autoconfigure-2.3.0.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spring-boot-starter-data-jpa">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/spring-boot-starter-data-jpa-2.2.0.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/spring-boot-starter-aop-2.2.0.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/spring-boot-starter-2.2.0.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/spring-boot-2.2.0.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/spring-boot-autoconfigure-2.2.0.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/spring-boot-starter-logging-2.2.0.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/logback-classic-1.2.3.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/logback-core-1.2.3.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/log4j-to-slf4j-2.12.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/log4j-api-2.12.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/jul-to-slf4j-1.7.28.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/jakarta.annotation-api-1.3.5.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/snakeyaml-1.25.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/spring-aop-5.2.0.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/aspectjweaver-1.9.4.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/spring-boot-starter-jdbc-2.2.0.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/HikariCP-3.4.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/spring-jdbc-5.2.0.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/jakarta.activation-api-1.2.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/jakarta.persistence-api-2.2.3.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/jakarta.transaction-api-1.3.3.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/hibernate-core-5.4.6.Final.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/jboss-logging-3.3.2.Final.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/javassist-3.24.0-GA.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/byte-buddy-1.9.11.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/antlr-2.7.7.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/jandex-2.0.5.Final.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/classmate-1.3.4.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/dom4j-2.1.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/hibernate-commons-annotations-5.1.0.Final.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/jaxb-runtime-2.3.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/txw2-2.3.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/istack-commons-runtime-3.0.7.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/stax-ex-1.8.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/FastInfoset-1.2.15.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/spring-data-jpa-2.2.0.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/spring-data-commons-2.2.0.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/spring-orm-5.2.0.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/spring-context-5.2.0.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/spring-expression-5.2.0.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/spring-tx-5.2.0.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/spring-beans-5.2.0.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/spring-core-5.2.0.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/spring-jcl-5.2.0.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/slf4j-api-1.7.26.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/spring-aspects-5.2.0.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+  </component>
+</module>
