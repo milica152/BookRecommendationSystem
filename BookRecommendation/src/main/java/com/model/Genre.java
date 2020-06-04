@@ -1,5 +1,0 @@
-package com.model;
-
-public enum Genre {
-    ROMANTIC, KIDS, EDUCATION, CRIME, DRAMA, SCIFI, BIOGRAPHY, COMEDY, COOKING, HOSTORY, MUSIC, SPORT, CLASSIC
-}
