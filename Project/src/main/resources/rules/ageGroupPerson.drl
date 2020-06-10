@@ -1,0 +1,34 @@
+package com.project.demo;
+import com.project.demo.model.Age
+import com.project.demo.dto.PersonInfoDTO
+
+rule "Child Person"
+    when
+        p : PersonInfoDTO(age < 13, intAge: age)
+    then
+        p.setAgeGroup(Age.CHILD);
+end
+
+rule "Young Person"
+    when
+        p : PersonInfoDTO(age > 12, age < 22, intAge: age)
+    then
+        p.setAgeGroup(Age.YOUNG);
+end
+
+
+rule "Adult Person"
+    when
+        p : PersonInfoDTO(age > 21, age < 59, intAge: age)
+    then
+        p.setAgeGroup(Age.ADULT);
+end
+
+
+rule "Elder Person"
+    when
+        p : PersonInfoDTO(age > 58, intAge: age)
+    then
+        p.setAgeGroup(Age.ELDER);
+end
+

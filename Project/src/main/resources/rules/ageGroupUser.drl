@@ -1,0 +1,34 @@
+package com.project.demo;
+import com.project.demo.model.User
+import com.project.demo.model.Age;
+
+rule "Child User"
+    when
+        u : User(age < 13, intAge: age)
+    then
+        u.setAgeGroup(Age.CHILD);
+end
+
+rule "Young User"
+    when
+        u : User(age > 12, age < 22, intAge: age)
+    then
+        u.setAgeGroup(Age.YOUNG);
+end
+
+
+rule "Adult User"
+    when
+        u : User(age > 21, age < 59, intAge: age)
+    then
+        u.setAgeGroup(Age.ADULT);
+end
+
+
+rule "Elder User"
+    when
+        u : User(age > 58, intAge: age)
+    then
+        u.setAgeGroup(Age.ELDER);
+end
+
