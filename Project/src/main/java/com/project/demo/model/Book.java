@@ -29,6 +29,12 @@ public class Book {
     @Column(name = "ageOfBook", nullable = false)
     private AgeOfBook ageOfBook;
 
+    @Column(name = "ratingCount", nullable = false)
+    private int ratingCount;
+
+    @Column(name = "rating", nullable = false)
+    private double rating;
+
     @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     @JoinTable(name = "book_writer",
             joinColumns = {@JoinColumn(name = "book_id", referencedColumnName = "id")},
@@ -40,13 +46,31 @@ public class Book {
     public Book() {
     }
 
-    public Book(String name, String image, Genre genre, Date published, AgeOfBook ageOfBook, List<Writer> writers) {
+    public Book(String name, String image, Genre genre, Date published, AgeOfBook ageOfBook, int ratingCount, double rating, List<Writer> writers) {
         this.name = name;
         this.image = image;
         this.genre = genre;
         this.published = published;
         this.ageOfBook = ageOfBook;
+        this.ratingCount = ratingCount;
+        this.rating = rating;
         this.writers = writers;
+    }
+
+    public int getRatingCount() {
+        return ratingCount;
+    }
+
+    public void setRatingCount(int ratingCount) {
+        this.ratingCount = ratingCount;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
     }
 
     public Long getId() {

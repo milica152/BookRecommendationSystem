@@ -10,6 +10,7 @@ rule "New book"
     then
         System.out.println("Book published on " + b.getPublished() + " is " + AgeOfBook.NEW);
         b.setAgeOfBook(AgeOfBook.NEW);
+        update(b);
 end
 
 
@@ -19,6 +20,7 @@ rule "Old book"
     then
         System.out.println("Book published on " + b.getPublished() + " is " + AgeOfBook.OLD);
         b.setAgeOfBook(AgeOfBook.OLD);
+        update(b);
 end
 
 
