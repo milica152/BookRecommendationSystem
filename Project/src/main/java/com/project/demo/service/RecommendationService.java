@@ -12,11 +12,4 @@ public class RecommendationService {
     @Autowired
     BookRepository bookRepository;
 
-    public Recommendation getTopTen(PersonInfoDTO personInfoDTO) {
-        return new Recommendation();
-    }
-
-    public Double getAdviseForBook(String id) {
-        return 0.0;
-    }
 }

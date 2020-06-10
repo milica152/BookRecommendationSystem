@@ -15,15 +15,4 @@ public class RecommendationController {
     @Autowired
     RecommendationService recommendationService;
 
-    @PostMapping("/getTopTen")
-    public ResponseEntity<Recommendation> getRecommendation(@RequestBody PersonInfoDTO personInfoDTO){
-        return new ResponseEntity<>(recommendationService.getTopTen(personInfoDTO), HttpStatus.OK);
-    }
-
-    @PostMapping("/getAdviseForBook/{id}")
-    public ResponseEntity<Double> getAdviseForBook(@PathVariable String id){
-        return new ResponseEntity<>(recommendationService.getAdviseForBook(id), HttpStatus.OK);
-    }
-
-
 }
