@@ -1,9 +1,9 @@
 package com.project.demo.controller;
 
-
 import com.project.demo.dto.PersonInfoDTO;
 import com.project.demo.dto.Recommendation;
 import com.project.demo.model.Book;
+import com.project.demo.model.GenreScore;
 import com.project.demo.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,9 +17,8 @@ public class BookController {
     @Autowired
     BookService bookService;
 
-
     @PostMapping("/getTopTen")
-    public ResponseEntity<Recommendation> getRecommendation(@RequestBody PersonInfoDTO personInfoDTO){
+    public ResponseEntity<GenreScore> getRecommendation(@RequestBody PersonInfoDTO personInfoDTO){
         return new ResponseEntity<>(bookService.getTopTen(personInfoDTO), HttpStatus.OK);
     }
 

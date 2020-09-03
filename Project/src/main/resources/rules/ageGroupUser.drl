@@ -3,32 +3,40 @@ import com.project.demo.model.User
 import com.project.demo.model.Age;
 
 rule "Child User"
+    salience 10
+    no-loop
     when
         u : User(age < 13, intAge: age)
     then
-        u.setAgeGroup(Age.CHILD);
+        modify(u){setAgeGroup(Age.CHILD)};
 end
 
 rule "Young User"
+    salience 10
+    no-loop
     when
         u : User(age > 12, age < 22, intAge: age)
     then
-        u.setAgeGroup(Age.YOUNG);
+        modify(u){setAgeGroup(Age.YOUNG)};
 end
 
 
 rule "Adult User"
+    salience 10
+    no-loop
     when
         u : User(age > 21, age < 59, intAge: age)
     then
-        u.setAgeGroup(Age.ADULT);
+        modify(u){setAgeGroup(Age.ADULT)};
 end
 
 
 rule "Elder User"
+    salience 10
+    no-loop
     when
         u : User(age > 58, intAge: age)
     then
-        u.setAgeGroup(Age.ELDER);
+        modify(u){setAgeGroup(Age.ELDER)};
 end
 

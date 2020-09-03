@@ -3,32 +3,40 @@ import com.project.demo.model.Age
 import com.project.demo.dto.PersonInfoDTO
 
 rule "Child Person"
+    salience 10
+    no-loop
     when
         p : PersonInfoDTO(age < 13, intAge: age)
     then
-        p.setAgeGroup(Age.CHILD);
+        modify(p){setAgeGroup(Age.CHILD)};
 end
 
 rule "Young Person"
+    salience 10
+    no-loop
     when
         p : PersonInfoDTO(age > 12, age < 22, intAge: age)
     then
-        p.setAgeGroup(Age.YOUNG);
+        modify(p){setAgeGroup(Age.YOUNG)};
 end
 
 
 rule "Adult Person"
+    salience 10
+    no-loop
     when
         p : PersonInfoDTO(age > 21, age < 59, intAge: age)
     then
-        p.setAgeGroup(Age.ADULT);
+        modify(p){setAgeGroup(Age.ADULT)};
 end
 
 
 rule "Elder Person"
+    salience 10
+    no-loop
     when
         p : PersonInfoDTO(age > 58, intAge: age)
     then
-        p.setAgeGroup(Age.ELDER);
+        modify(p){setAgeGroup(Age.ELDER)};
 end
 

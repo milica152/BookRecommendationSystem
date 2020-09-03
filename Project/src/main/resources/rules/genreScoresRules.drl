@@ -1,0 +1,336 @@
+package rules;
+dialect  "mvel"
+
+import com.project.demo.dto.PersonInfoDTO
+import java.util.HashMap
+import java.util.ArrayList
+import com.project.demo.model.*
+
+rule "Women read romance novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO(gender == Gender.FEMALE)
+    then
+        $innerMap.put(Genre.ROMANCE, $innerMap.get(Genre.ROMANCE)+2);
+end
+
+rule "People with sphere of interest INTERPERSONAL_RELATIONSHIP read romance novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO($sphereOfInterest : sphereOfInterest, $sphereOfInterest contains SphereOfInterest.INTERPERSONAL_RELATIONSHIP)
+    then
+        $innerMap.put(Genre.ROMANCE, $innerMap.get(Genre.ROMANCE)+2);
+end
+
+rule "Young people read romance novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO(ageGroup == Age.YOUNG)
+    then
+        $innerMap.put(Genre.ROMANCE, $innerMap.get(Genre.ROMANCE)+1);
+end
+
+rule "People with sphere of interest SCIENCE read EDUCATION novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO($sphereOfInterest : sphereOfInterest, $sphereOfInterest contains SphereOfInterest.SCIENCE)
+    then
+        $innerMap.put(Genre.EDUCATION, $innerMap.get(Genre.EDUCATION)+2);
+end
+
+rule "People with sphere of interest LEARNING read EDUCATION novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO($sphereOfInterest : sphereOfInterest, $sphereOfInterest contains SphereOfInterest.LEARNING)
+    then
+        $innerMap.put(Genre.EDUCATION, $innerMap.get(Genre.EDUCATION)+1);
+end
+
+
+rule "People with sphere of interest CREATIVITY read COOKING novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO($sphereOfInterest : sphereOfInterest, $sphereOfInterest contains SphereOfInterest.CREATIVITY)
+    then
+        $innerMap.put(Genre.COOKING, $innerMap.get(Genre.COOKING)+1);
+end
+
+rule "People with sphere of interest FOOD read COOKING novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO($sphereOfInterest : sphereOfInterest, $sphereOfInterest contains SphereOfInterest.FOOD)
+    then
+        $innerMap.put(Genre.COOKING, $innerMap.get(Genre.COOKING)+2);
+end
+
+rule "People with sphere of interest SPORT read SPORT novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO($sphereOfInterest : sphereOfInterest, $sphereOfInterest contains SphereOfInterest.SPORT)
+    then
+        $innerMap.put(Genre.SPORT, $innerMap.get(Genre.SPORT)+2);
+end
+
+rule "Men read SPORT novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO(gender == Gender.MALE)
+    then
+        $innerMap.put(Genre.SPORT, $innerMap.get(Genre.SPORT)+2);
+end
+
+
+rule "Young men read SPORT novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO(gender != Gender.FEMALE && (ageGroup == Age.YOUNG || ageGroup == Age.ADULT))
+    then
+        $innerMap.put(Genre.SPORT, $innerMap.get(Genre.SPORT)+1);
+end
+
+
+rule "People with sphere of interest TRUE_EVENTS read BIOGRAPHY novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO($sphereOfInterest : sphereOfInterest, $sphereOfInterest contains SphereOfInterest.TRUE_EVENTS)
+    then
+        $innerMap.put(Genre.BIOGRAPHY, $innerMap.get(Genre.BIOGRAPHY)+1);
+end
+
+
+rule "People with sphere of interest MUSIC read BIOGRAPHY novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO($sphereOfInterest : sphereOfInterest, $sphereOfInterest contains SphereOfInterest.MUSIC)
+    then
+        $innerMap.put(Genre.BIOGRAPHY, $innerMap.get(Genre.BIOGRAPHY)+1);
+end
+
+
+rule "People with sphere of interest CELEBRITY read BIOGRAPHY novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO($sphereOfInterest : sphereOfInterest, $sphereOfInterest contains SphereOfInterest.CELEBRITY)
+    then
+        $innerMap.put(Genre.BIOGRAPHY, $innerMap.get(Genre.BIOGRAPHY)+2);
+end
+
+
+rule "People with sphere of interest MUSIC read MUSIC novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO($sphereOfInterest : sphereOfInterest, $sphereOfInterest contains SphereOfInterest.MUSIC)
+    then
+        $innerMap.put(Genre.MUSIC, $innerMap.get(Genre.MUSIC) + 2);
+end
+
+rule "People with sphere of interest CREATIVITY read MUSIC novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO($sphereOfInterest : sphereOfInterest, $sphereOfInterest contains SphereOfInterest.CREATIVITY)
+    then
+        $innerMap.put(Genre.MUSIC, $innerMap.get(Genre.MUSIC) + 1);
+end
+
+rule "People with sphere of interest SHOW_BUSINESS read MUSIC novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO($sphereOfInterest : sphereOfInterest, $sphereOfInterest contains SphereOfInterest.SHOW_BUSINESS)
+    then
+        $innerMap.put(Genre.MUSIC, $innerMap.get(Genre.MUSIC) + 1);
+end
+
+rule "Kids read KIDS novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO(ageGroup == Age.CHILD)
+    then
+        $innerMap.put(Genre.CHILDREN, $innerMap.get(Genre.CHILDREN)+50);   // recommend only CHILDREN novels to CHILD age
+end
+
+rule "People with sphere of interest ADVENTURE read CRIME novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO($sphereOfInterest : sphereOfInterest, $sphereOfInterest contains SphereOfInterest.ADVENTURE)
+    then
+        $innerMap.put(Genre.CRIME, $innerMap.get(Genre.CRIME) + 2);
+end
+
+
+rule "People with sphere of interest FICTION read CRIME novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO($sphereOfInterest : sphereOfInterest, $sphereOfInterest contains SphereOfInterest.FICTION)
+    then
+        $innerMap.put(Genre.CRIME, $innerMap.get(Genre.CRIME) + 1);
+end
+
+rule "Youngs and adults read CRIME novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO(ageGroup == Age.YOUNG || ageGroup == Age.ADULT)
+    then
+        $innerMap.put(Genre.CRIME, $innerMap.get(Genre.CRIME)+1);
+end
+
+
+rule "People with sphere of interest SHOW_BUSINESS read COMEDY novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO($sphereOfInterest : sphereOfInterest, $sphereOfInterest contains SphereOfInterest.SHOW_BUSINESS)
+    then
+        $innerMap.put(Genre.COMEDY, $innerMap.get(Genre.COMEDY) + 1);
+end
+
+
+rule "People with sphere of interest FUN read COMEDY novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO($sphereOfInterest : sphereOfInterest, $sphereOfInterest contains SphereOfInterest.FUN)
+    then
+        $innerMap.put(Genre.COMEDY, $innerMap.get(Genre.COMEDY) + 2);
+end
+
+
+
+rule "People with sphere of interest FICTION read SCI_FI novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO($sphereOfInterest : sphereOfInterest, $sphereOfInterest contains SphereOfInterest.FICTION)
+    then
+        $innerMap.put(Genre.SCI_FI, $innerMap.get(Genre.SCI_FI) + 1);
+end
+
+rule "People with sphere of interest SCIENCE read SCI_FI novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO($sphereOfInterest : sphereOfInterest, $sphereOfInterest contains SphereOfInterest.SCIENCE)
+    then
+        $innerMap.put(Genre.SCI_FI, $innerMap.get(Genre.SCI_FI) + 1);
+end
+
+
+rule "People with sphere of interest TECHNOLOGY read SCI_FI novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO($sphereOfInterest : sphereOfInterest, $sphereOfInterest contains SphereOfInterest.TECHNOLOGY)
+    then
+        $innerMap.put(Genre.SCI_FI, $innerMap.get(Genre.SCI_FI) + 1);
+end
+
+rule "Youngs and adults read SCI_FI novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO(ageGroup == Age.YOUNG || ageGroup == Age.ADULT)
+    then
+        $innerMap.put(Genre.SCI_FI, $innerMap.get(Genre.SCI_FI)+1);
+end
+
+
+rule "People with sphere of interest HISTORY read HISTORY novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO($sphereOfInterest : sphereOfInterest, $sphereOfInterest contains SphereOfInterest.HISTORY)
+    then
+        $innerMap.put(Genre.HISTORY, $innerMap.get(Genre.HISTORY) + 2);
+end
+
+
+rule "People with sphere of interest TRUE_EVENTS read HISTORY novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO($sphereOfInterest : sphereOfInterest, $sphereOfInterest contains SphereOfInterest.TRUE_EVENTS)
+    then
+        $innerMap.put(Genre.HISTORY, $innerMap.get(Genre.HISTORY) + 1);
+end
+
+
+rule "People with sphere of interest INTERPERSONAL_RELATIONSHIP read DRAMA novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO($sphereOfInterest : sphereOfInterest, $sphereOfInterest contains SphereOfInterest.INTERPERSONAL_RELATIONSHIP)
+    then
+        $innerMap.put(Genre.DRAMA, $innerMap.get(Genre.DRAMA) + 2);
+end
+
+rule "People with sphere of interest FICTION read DRAMA novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO($sphereOfInterest : sphereOfInterest, $sphereOfInterest contains SphereOfInterest.FICTION)
+    then
+        $innerMap.put(Genre.DRAMA, $innerMap.get(Genre.DRAMA) + 1);
+end
+
+rule "Women read DRAMA novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO(gender == Gender.FEMALE)
+    then
+        $innerMap.put(Genre.DRAMA, $innerMap.get(Genre.DRAMA) + 1);
+end
+
+rule "People with sphere of interest WORLD_LITERATURE read CLASSIC novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO($sphereOfInterest : sphereOfInterest, $sphereOfInterest contains SphereOfInterest.WORLD_LITERATURE)
+    then
+        $innerMap.put(Genre.CLASSIC, $innerMap.get(Genre.CLASSIC) + 1);
+end
+
+rule "People with sphere of interest HISTORY_OF_LITERATURE read CLASSIC novels"
+    no-loop
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO($sphereOfInterest : sphereOfInterest, $sphereOfInterest contains SphereOfInterest.HISTORY_OF_LITERATURE)
+    then
+        $innerMap.put(Genre.CLASSIC, $innerMap.get(Genre.CLASSIC) + 2);
+end
+
+/*rule "People that read romance novels before are more likely to read romance novels now"
+    when
+        gs : GenreScore($innerMap : genreScores)
+        p : PersonInfoDTO($booksRead : booksRead, numberOfRomanceBooksRead($booksRead)>($booksRead.size()/5))
+    then
+        $innerMap.put(Genre.ROMANCE, $innerMap.get(Genre.ROMANCE)+2);
+end
+
+
+
+function int numberOfRomanceBooksRead(ArrayList<Book> books) {
+    int counter = 0;
+
+}
+
+*/

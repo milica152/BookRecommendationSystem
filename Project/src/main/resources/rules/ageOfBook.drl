@@ -5,26 +5,23 @@ import java.util.Calendar
 import com.project.demo.model.AgeOfBook;
 
 rule "New book"
+    salience 10
+    no-loop
     when
         b : Book(isAfterNYearsAgo(published,8))
     then
-        System.out.println("Book published on " + b.getPublished() + " is " + AgeOfBook.NEW);
-        b.setAgeOfBook(AgeOfBook.NEW);
-        update(b);
+        //System.out.println("Book published on " + b.getPublished() + " is " + AgeOfBook.NEW);
+        modify(b){setAgeOfBook(AgeOfBook.NEW)};
 end
 
-
 rule "Old book"
+    salience 10
+    no-loop
     when
         b : Book(isBeforeNYearsAgo(published,40))
     then
-        System.out.println("Book published on " + b.getPublished() + " is " + AgeOfBook.OLD);
-        b.setAgeOfBook(AgeOfBook.OLD);
-        update(b);
+        modify(b){setAgeOfBook(AgeOfBook.OLD)};
 end
-
-
-
 
 function boolean isAfterNYearsAgo(Date date, int nYears) {
     if (date != null) {
@@ -36,8 +33,6 @@ function boolean isAfterNYearsAgo(Date date, int nYears) {
         return false;
     }
 }
-
-
 
 function boolean isBeforeNYearsAgo(Date date, int nYears) {
     if (date != null) {
