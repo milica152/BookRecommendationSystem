@@ -77,6 +77,11 @@
             <artifactId>jjwt</artifactId>
             <version>0.4</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>

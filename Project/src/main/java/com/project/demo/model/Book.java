@@ -26,7 +26,7 @@ public class Book {
     @Column(name = "published", nullable = false)
     private Date published;
 
-    @Column(name = "ageOfBook", nullable = false)
+    @Column(name = "ageOfBook")
     private AgeOfBook ageOfBook;
 
     @Column(name = "ratingCount", nullable = false)

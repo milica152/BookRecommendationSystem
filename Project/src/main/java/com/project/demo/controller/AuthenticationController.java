@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthenticationController {
 
 
-    @PostMapping("/login")
-    public ResponseEntity<String> login(){
-        return new ResponseEntity<String>("", HttpStatus.OK);
-    }
+    //@PostMapping("/login")
+    //public ResponseEntity<String> login(){
+    //     return new ResponseEntity<String>("", HttpStatus.OK);
+    //}
 }
