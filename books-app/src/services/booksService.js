@@ -1,7 +1,6 @@
 
-const getAll = async (searchParam) => await fetch(`http://localhost:8080/books`, {
-        method: 'GET',
-        body : searchParam
+const getAll = async (searchParam) => await fetch(`http://localhost:8080/books/getBySearchParam?param=` + searchParam, {
+        method: 'GET'
     })
     .then(response => response.json()).catch(error => console.error(error));
 

@@ -1,20 +1,18 @@
-import React, {Fragment, useState} from 'react';
+import React, {Fragment, useState, useEffect} from 'react';
 import SearchBar from "../components/SearchBar";
 import BooksListView from "../components/BooksListView";
+import booksService from "../services/booksService";
 
 const BooksPage = () => {
-    const [searchParameter, setSearchParameter] = useState(null);   //if null, look for the content constant
-    const [booksContent, setBooksContent] = useState(null);     // if null, look for the searchParameter constant
+    const [booksContent, setBooksContent] = useState([]);
+    const handleOnChangeContent = (content) => setBooksContent(content);
 
-    const handleOnChangeSearchParameter = (newSearchParameter) => setSearchParameter(newSearchParameter);
-    const handleOnChangeRecommendationContent = (recommendationContent) => {
-        setBooksContent(recommendationContent);
-        console.log('changed');
-    };
+    useEffect(() => booksService.getAll("").then(response => handleOnChangeContent(response)), []);
+    console.log(booksContent);
 
     return <Fragment>
-            <SearchBar onSearch = {handleOnChangeSearchParameter} onGetRecommendation={handleOnChangeRecommendationContent}/>
-            <BooksListView searchParameter = {searchParameter} content = {booksContent}/>
+            <SearchBar onchangecontent = {handleOnChangeContent}/>
+            <BooksListView content = {booksContent}/>
         </Fragment>
 };
 

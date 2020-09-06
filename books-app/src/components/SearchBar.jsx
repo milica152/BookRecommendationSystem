@@ -5,8 +5,14 @@ const SearchBar = (props) => {
     const [recommendationDTO, setRecommendationDTO] = useState({age : 0, gender: "", sphereOfInterest: [], booksRead: [], maxPrice: 0, genre: ""});
     const [searchParameter, setSearchParameter] = useState("");
 
-    const onSearch = () => props.onSearch.bind(searchParameter);
+    const onSearch = async () => {
+        const response = await booksService.getAll(searchParameter);
+        props.onchangecontent(response);
+        console.log(response);
+    };
+
     const changeSearchParam = (e) => setSearchParameter(e.target.value);
+
     const changeRecommendation = (e) => {
         const targetName = e.target.name;
         const targetValue = e.target.value;
@@ -18,7 +24,7 @@ const SearchBar = (props) => {
 
     const getRecommendation = async () => {
         const response = await booksService.getRecommendation(recommendationDTO);
-        props.onGetRecommendation(response);
+        props.onchangecontent(response);
         console.log(response);
     };
 

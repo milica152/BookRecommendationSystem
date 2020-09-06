@@ -10,8 +10,8 @@ import java.util.List;
 @Repository
 public interface BookRepository extends JpaRepository<Book, Long> {
     List<Book> findAllByName(String name);
+    List<Book> findAllByNameContaining(String name);
     List<Book> findAllByGenre(Genre genre);
     List<Book> findAllByRatingGreaterThan(double minRating);
     List<Book> findAllByRatingLessThanEqual(double maxRating);
-
 }

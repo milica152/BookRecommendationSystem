@@ -19,7 +19,7 @@ public class BookController {
     BookService bookService;
 
     @PostMapping("/getTopTen")
-    public ResponseEntity<GenreScore> getRecommendation(@RequestBody PersonInfoDTO personInfoDTO){
+    public ResponseEntity<List<Book>> getRecommendation(@RequestBody PersonInfoDTO personInfoDTO){
         return new ResponseEntity<>(bookService.getTopTen(personInfoDTO), HttpStatus.OK);
     }
 
@@ -28,10 +28,10 @@ public class BookController {
         return new ResponseEntity<>(bookService.getAdviseForBook(id), HttpStatus.OK);
     }
 
-
-    @GetMapping
-    public ResponseEntity<List<Book>> getAll(){
-        return new ResponseEntity<>(bookService.getBooks(), HttpStatus.OK);
+    @GetMapping("/getBySearchParam")
+    public ResponseEntity<List<Book>> getAll(@RequestParam String param){
+        System.out.println(param);
+        return new ResponseEntity<>(bookService.getBooks(param), HttpStatus.OK);
     }
 
     @PostMapping

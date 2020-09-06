@@ -1,0 +1,11 @@
+package rules;
+dialect  "mvel"
+import com.project.demo.model.*
+
+rule "genreChoosing"
+    when
+        GenreWrapper($desiredGenre : genre)
+        b: Book(genre!=$desiredGenre)
+    then
+        delete(b);
+end
