@@ -85,7 +85,7 @@ rule "Men read SPORT novels"
         gs : GenreScore($innerMap : genreScores)
         p : PersonInfoDTO(gender == Gender.MALE)
     then
-        $innerMap.put(Genre.SPORT, $innerMap.get(Genre.SPORT)+2);
+        $innerMap.put(Genre.SPORT, $innerMap.get(Genre.SPORT)+1);
 end
 
 

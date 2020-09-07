@@ -1,7 +1,6 @@
 package com.project.demo.service;
 
 import com.project.demo.dto.PersonInfoDTO;
-import com.project.demo.dto.Recommendation;
 import com.project.demo.model.Book;
 import com.project.demo.model.Genre;
 import com.project.demo.model.GenreScore;
@@ -13,7 +12,6 @@ import org.kie.api.runtime.KieSession;
 import org.kie.api.runtime.rule.FactHandle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.*;
 
 @Service
@@ -22,7 +20,24 @@ public class BookService {
     BookRepository bookRepository;
 
     public List<Book> getTopTen(PersonInfoDTO personInfoDTO) {
-        List<Book> all = getBooks("");
+        // TODO --- forward chaining treci nivo dodas da zakljucuje preference na osnovu ageGroup,
+        //  dakle ukoliko u listi sfera interesovanja nema ta odredjena za dati uzrast i ukoliko je uzrast dati
+        //  dodaj tu preferencu u listu interesovanja i onda ce se okinuti jos jedan prolaz pravila (treci krug
+        //  chaining-a)
+
+        // TODO - mozda preko accumulate da uradim knjige koje je korisnik procitao, kao from accumulate Book
+        //  (necemo ubaciti ovaj put genre) pa izbrojis koji zanr preovladava u listi (neki checkboxevi ali u
+        //  ogranicenom prostoru), taj zanr povecaj za 2
+
+        // TODO - ako stignem, uraditi validaciju preko pravila, mozda da kada se naidje na nesto sto je
+        //  pogresno da se automatski izbaci GenreScores iz radne memorije i mozda ubaci poruka o gresci
+        //  (baca hendlovanu gresku??)
+
+        // TODO - mozda spajati vise spheresOfInterests kao u predef. projektu pa da se spojene ponasaj drugacije
+
+        // TODO - uzeti onda u obzir i ageOfBook zajedno sa ageGroup,
+        //  takodje uzeti u obzir i ocenu knjiga --- OBAVEZNO FORWARD CHAINING NA 3 NIVOA, to je uslov za polaganje
+
         HashMap<Genre, Integer> innerMap = new HashMap<>();
         innerMap.put(Genre.ROMANCE, 0);
         innerMap.put(Genre.CHILDREN, 0);
@@ -52,19 +67,13 @@ public class BookService {
         kieSession.delete(handle0);   // in order to start again
 
         genreScores.setGenreScores(sortByValue(genreScores.getGenreScores()));
-
+        System.out.println(genreScores.getGenreScores());
         List<Genre> genres = new ArrayList<Genre>(genreScores.getGenreScores().keySet());
         System.out.println(genres);
 
         GenreWrapper desiredGenre = new GenreWrapper(genres.get(genres.size()-1));
-
-
         List<Book> result = findByGenre(desiredGenre, kieSession);
-
-
         kieSession.dispose();
-        // kad se odaberu knjige odr. zanra, uzeti onda u obzir i ageOfBook zajedno sa ageGroup, takodje uzeti u obzir i ocenu knjiga
-        // uzeti u obzir i kad se unese tacan zanr da samo knjige tog zanra izbacuje
 
         return result;
     }

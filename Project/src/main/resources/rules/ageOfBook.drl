@@ -33,7 +33,6 @@ rule "New book"
     when
         b : Book($published : published, $published > 2012 )
     then
-        System.out.println("rule New book fired.");
         modify(b){setAgeOfBook(AgeOfBook.NEW)};
 end
 
@@ -43,6 +42,5 @@ rule "Old book"
     when
         b : Book($published : published, $published< 1980)
     then
-        System.out.println("rule Old book fired.");
         modify(b){setAgeOfBook(AgeOfBook.OLD)};
 end

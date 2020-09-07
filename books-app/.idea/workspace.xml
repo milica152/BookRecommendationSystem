@@ -2,20 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ab31bad-5c65-42a9-bc40-873c664e7cc6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Project/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Project/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project/src/main/java/com/project/demo/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Project/src/main/java/com/project/demo/controller/BookController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Project/src/main/resources/rules/concludingPreferences.drl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Predlog projekta iz predmeta SBNZ.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Predlog projekta iz predmeta SBNZ.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project/src/main/java/com/project/demo/dto/PersonInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Project/src/main/java/com/project/demo/dto/PersonInfoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project/src/main/java/com/project/demo/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Project/src/main/java/com/project/demo/model/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project/src/main/java/com/project/demo/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Project/src/main/java/com/project/demo/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Project/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project/src/main/resources/rules/ageGroupPerson.drl" beforeDir="false" afterPath="$PROJECT_DIR$/../Project/src/main/resources/rules/ageGroupPerson.drl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project/src/main/resources/rules/ageGroupUser.drl" beforeDir="false" afterPath="$PROJECT_DIR$/../Project/src/main/resources/rules/ageGroupUser.drl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project/src/main/resources/rules/ageOfBook.drl" beforeDir="false" afterPath="$PROJECT_DIR$/../Project/src/main/resources/rules/ageOfBook.drl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BooksListView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BooksListView.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/BooksPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/BooksPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/booksService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/booksService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project/src/main/resources/rules/genreScoresRules.drl" beforeDir="false" afterPath="$PROJECT_DIR$/../Project/src/main/resources/rules/genreScoresRules.drl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +39,7 @@
         <entry file="file://$PROJECT_DIR$/../../../timesheet/timesheet/timesheet-front-application/src/components/client/ClientListView.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -57,11 +50,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/BooksListView.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#49#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="153">
+              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -78,13 +68,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/SearchBar.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="136" column="117" selection-start-line="136" selection-start-column="117" selection-end-line="136" selection-end-column="117" />
+            <state relative-caret-position="261">
+              <caret line="136" column="49" lean-forward="true" selection-start-line="136" selection-start-column="49" selection-end-line="136" selection-end-column="49" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
-                <element signature="e#512#726#0" />
-                <element signature="e#774#939#0" />
-                <element signature="e#995#1274#0" />
               </folding>
             </state>
           </provider>
@@ -162,8 +149,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -242,7 +229,9 @@
       <workItem from="1599328795243" duration="598000" />
       <workItem from="1599335807918" duration="767000" />
       <workItem from="1599349748267" duration="20935000" />
-      <workItem from="1599412373288" duration="15991000" />
+      <workItem from="1599412373288" duration="17476000" />
+      <workItem from="1599476415093" duration="2361000" />
+      <workItem from="1599485842344" duration="1913000" />
     </task>
     <task id="LOCAL-00001" summary="Frontend page and getting data from backend done">
       <created>1599412792711</created>
@@ -251,11 +240,18 @@
       <option name="project" value="LOCAL" />
       <updated>1599412792711</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Showing recommended books with suitable genre and search exclusively by genre done.">
+      <created>1599450608244</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1599450608244</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57178000" />
+    <option name="totallyTimeSpent" value="62937000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -265,7 +261,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.22692889" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.23373677" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.0751634" />
@@ -274,7 +270,7 @@
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32843137" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.2369281" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.16503268" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
@@ -295,7 +291,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Frontend page and getting data from backend done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Frontend page and getting data from backend done" />
+    <MESSAGE value="Showing recommended books with suitable genre and search exclusively by genre done." />
+    <option name="LAST_COMMIT_MESSAGE" value="Showing recommended books with suitable genre and search exclusively by genre done." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/index.js">
@@ -367,23 +364,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../timesheet/timesheet/timesheet-front-application/src/components/client/ClientListView.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/BooksListItem.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="24" selection-start-column="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/BooksPage.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -394,6 +374,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../../timesheet/timesheet/timesheet-front-application/src/components/client/ClientListView.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/BooksListView.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/BooksListItem.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/services/booksService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -401,25 +405,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/BooksListView.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SearchBar.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="136" column="117" selection-start-line="136" selection-start-column="117" selection-end-line="136" selection-end-column="117" />
+        <state relative-caret-position="261">
+          <caret line="136" column="49" lean-forward="true" selection-start-line="136" selection-start-column="49" selection-end-line="136" selection-end-column="49" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#512#726#0" />
-            <element signature="e#774#939#0" />
-            <element signature="e#995#1274#0" />
           </folding>
         </state>
       </provider>

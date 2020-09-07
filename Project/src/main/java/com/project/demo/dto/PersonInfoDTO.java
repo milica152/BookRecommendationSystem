@@ -34,6 +34,10 @@ public class PersonInfoDTO {
         return age;
     }
 
+    public void addSphereOfInterest(SphereOfInterest sphereOfInterest){
+        this.sphereOfInterest.add(sphereOfInterest);
+    }
+
     public void setAge(int age) {
         this.age = age;
     }

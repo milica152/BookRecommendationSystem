@@ -1,0 +1,74 @@
+package rules;
+dialect  "mvel"
+
+import java.util.*
+import com.project.demo.dto.*
+import com.project.demo.model.*
+
+rule "Young people are interested in FICTION"
+    salience 10
+    no-loop
+    when
+        p : PersonInfoDTO(ageGroup == Age.YOUNG , $sphereOfInterest : sphereOfInterest, !($sphereOfInterest contains SphereOfInterest.FICTION))
+    then
+        modify(p){addSphereOfInterest(SphereOfInterest.FICTION)}
+end
+
+
+rule "Young people are interested in SHOW_BUSINESS"
+    salience 10
+    no-loop
+    when
+        p : PersonInfoDTO(ageGroup == Age.YOUNG , $sphereOfInterest : sphereOfInterest, !($sphereOfInterest contains SphereOfInterest.SHOW_BUSINESS))
+    then
+        modify(p){addSphereOfInterest(SphereOfInterest.SHOW_BUSINESS)}
+end
+
+
+rule "Young people are interested in CELEBRITY"
+    salience 10
+    no-loop
+    when
+        p : PersonInfoDTO(ageGroup == Age.YOUNG , $sphereOfInterest : sphereOfInterest, !($sphereOfInterest contains SphereOfInterest.CELEBRITY))
+    then
+        modify(p){addSphereOfInterest(SphereOfInterest.CELEBRITY)}
+end
+
+rule "Children are interested in ADVENTURE"
+    salience 10
+    no-loop
+    when
+        p : PersonInfoDTO(ageGroup == Age.CHILD , $sphereOfInterest : sphereOfInterest, !($sphereOfInterest contains SphereOfInterest.ADVENTURE))
+    then
+        modify(p){addSphereOfInterest(SphereOfInterest.ADVENTURE)}
+end
+
+
+
+rule "Adults are interested in WORLD_LITERATURE"
+    salience 10
+    no-loop
+    when
+        p : PersonInfoDTO(ageGroup == Age.ADULT , $sphereOfInterest : sphereOfInterest, !($sphereOfInterest contains SphereOfInterest.WORLD_LITERATURE))
+    then
+        modify(p){addSphereOfInterest(SphereOfInterest.WORLD_LITERATURE)}
+end
+
+
+rule "Adults are interested in HISTORY_OF_LITERATURE"
+    salience 10
+    no-loop
+    when
+        p : PersonInfoDTO(ageGroup == Age.ADULT , $sphereOfInterest : sphereOfInterest, !($sphereOfInterest contains SphereOfInterest.HISTORY_OF_LITERATURE))
+    then
+        modify(p){addSphereOfInterest(SphereOfInterest.HISTORY_OF_LITERATURE)}
+end
+
+rule "Elders are interested in HISTORY"
+    salience 10
+    no-loop
+    when
+        p : PersonInfoDTO(ageGroup == Age.ELDER, $sphereOfInterest : sphereOfInterest, !($sphereOfInterest contains SphereOfInterest.HISTORY))
+    then
+        modify(p){addSphereOfInterest(SphereOfInterest.HISTORY)}
+end
