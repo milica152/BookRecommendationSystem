@@ -3,7 +3,9 @@ package com.project.demo.controller;
 import com.project.demo.dto.PersonInfoDTO;
 import com.project.demo.dto.Recommendation;
 import com.project.demo.model.Book;
+import com.project.demo.model.Genre;
 import com.project.demo.model.GenreScore;
+import com.project.demo.model.GenreWrapper;
 import com.project.demo.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,9 +30,14 @@ public class BookController {
         return new ResponseEntity<>(bookService.getAdviseForBook(id), HttpStatus.OK);
     }
 
+    @GetMapping("/findByGenre")
+    public ResponseEntity<List<Book>> findByGenre(@RequestParam String param){
+        System.out.println(param);
+        return new ResponseEntity<>(bookService.findByGenreString(param), HttpStatus.OK);
+    }
+
     @GetMapping("/getBySearchParam")
     public ResponseEntity<List<Book>> getAll(@RequestParam String param){
-        System.out.println(param);
         return new ResponseEntity<>(bookService.getBooks(param), HttpStatus.OK);
     }
 

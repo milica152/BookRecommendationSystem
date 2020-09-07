@@ -1,5 +1,7 @@
-package com.project.demo;
-import com.project.demo.model.User
+package rules;
+dialect  "mvel"
+
+import com.project.demo.model.User;
 import com.project.demo.model.Age;
 
 rule "Child User"

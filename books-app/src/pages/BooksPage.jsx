@@ -8,7 +8,6 @@ const BooksPage = () => {
     const handleOnChangeContent = (content) => setBooksContent(content);
 
     useEffect(() => booksService.getAll("").then(response => handleOnChangeContent(response)), []);
-    console.log(booksContent);
 
     return <Fragment>
             <SearchBar onchangecontent = {handleOnChangeContent}/>

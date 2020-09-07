@@ -1,7 +1,7 @@
 import React from 'react';
 import BooksListItem from "./BooksListItem";
 
-const ClientListView = (props) => {
+const BooksListView = (props) => {
     const Books = () => props.content.map(item => <BooksListItem key={item.id} book={item} />);
 
     return (
@@ -14,4 +14,4 @@ const ClientListView = (props) => {
     );
 };
 
-export default ClientListView;
+export default BooksListView;

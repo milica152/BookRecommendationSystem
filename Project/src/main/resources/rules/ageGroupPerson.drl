@@ -1,6 +1,8 @@
-package com.project.demo;
-import com.project.demo.model.Age
-import com.project.demo.dto.PersonInfoDTO
+package rules;
+dialect  "mvel"
+
+import com.project.demo.model.Age;
+import com.project.demo.dto.PersonInfoDTO;
 
 rule "Child Person"
     salience 10

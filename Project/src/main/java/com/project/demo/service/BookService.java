@@ -14,10 +14,7 @@ import org.kie.api.runtime.rule.FactHandle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class BookService {
@@ -45,30 +42,27 @@ public class BookService {
         KieServices ks = KieServices.Factory.get();
         KieContainer kieContainer = ks.getKieClasspathContainer();
         KieSession kieSession = kieContainer.newKieSession("ksession-rules");
+
         FactHandle handle0 = kieSession.insert(personInfoDTO);
         FactHandle handle1 = kieSession.insert(genreScores);
+
         kieSession.fireAllRules();
 
         kieSession.delete(handle1);
         kieSession.delete(handle0);   // in order to start again
 
-        // find genre with highest value - TODO
-        //
-        GenreWrapper desiredGenre = new GenreWrapper(Genre.CHILDREN);
-        kieSession.insert(desiredGenre);
-        List<Book> allBooks = bookRepository.findAllByNameContaining("");
-        for(Book b : allBooks){
-            kieSession.insert(b);
-        }
-        kieSession.fireAllRules();
+        genreScores.setGenreScores(sortByValue(genreScores.getGenreScores()));
 
-        Collection<?> objects = kieSession.getObjects();
-        List<Book> result = new ArrayList<>();
-        for(Object o : objects){
-            if(o instanceof Book){
-                result.add((Book)o);
-            }
-        }
+        List<Genre> genres = new ArrayList<Genre>(genreScores.getGenreScores().keySet());
+        System.out.println(genres);
+
+        GenreWrapper desiredGenre = new GenreWrapper(genres.get(genres.size()-1));
+
+
+        List<Book> result = findByGenre(desiredGenre, kieSession);
+
+
+        kieSession.dispose();
         // kad se odaberu knjige odr. zanra, uzeti onda u obzir i ageOfBook zajedno sa ageGroup, takodje uzeti u obzir i ocenu knjiga
         // uzeti u obzir i kad se unese tacan zanr da samo knjige tog zanra izbacuje
 
@@ -90,4 +84,58 @@ public class BookService {
     public void removeBook(Book book) {
         bookRepository.delete(book);
     }
+
+    private HashMap<Genre, Integer> sortByValue(HashMap<Genre, Integer> hm) {
+        // Create a list from elements of HashMap
+        List<Map.Entry<Genre, Integer> > list =
+                new LinkedList<Map.Entry<Genre, Integer> >(hm.entrySet());
+
+        // Sort the list
+        Collections.sort(list, new Comparator<Map.Entry<Genre, Integer> >() {
+            public int compare(Map.Entry<Genre, Integer> o1,
+                               Map.Entry<Genre, Integer> o2)
+            {
+                return (o1.getValue()).compareTo(o2.getValue());
+            }
+        });
+
+        // put data from sorted list to hashmap
+        HashMap<Genre, Integer> temp = new LinkedHashMap<Genre, Integer>();
+        for (Map.Entry<Genre, Integer> aa : list) {
+            temp.put(aa.getKey(), aa.getValue());
+        }
+        return temp;
+    }
+
+    public List<Book> findByGenreString(String genre){
+        KieServices ks = KieServices.Factory.get();
+        KieContainer kieContainer = ks.getKieClasspathContainer();
+        KieSession kieSession = kieContainer.newKieSession("ksession-rules");
+        GenreWrapper genreWrapper = new GenreWrapper(Genre.valueOf(genre));
+        List<Book> result = findByGenre(genreWrapper, kieSession);
+        kieSession.dispose();
+        return result;
+    }
+
+    private List<Book> findByGenre(GenreWrapper desiredGenre,  KieSession kieSession) {
+        System.out.println(desiredGenre.getGenre());
+
+        kieSession.insert(desiredGenre);
+        List<Book> allBooks = bookRepository.findAllByNameContaining("");
+        for(Book b : allBooks){
+            kieSession.insert(b);
+        }
+        kieSession.fireAllRules();
+
+        Collection<?> objects = kieSession.getObjects();
+        List<Book> result = new ArrayList<>();
+        for(Object o : objects){
+            if(o instanceof Book){
+                result.add((Book)o);
+            }
+        }
+
+        return result;
+    }
+
 }

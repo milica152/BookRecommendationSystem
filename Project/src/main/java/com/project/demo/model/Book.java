@@ -24,7 +24,7 @@ public class Book {
     private Genre genre;
 
     @Column(name = "published", nullable = false)
-    private Date published;
+    private int published;
 
     @Column(name = "ageOfBook")
     private AgeOfBook ageOfBook;
@@ -46,7 +46,7 @@ public class Book {
     public Book() {
     }
 
-    public Book(String name, String image, Genre genre, Date published, AgeOfBook ageOfBook, int ratingCount, double rating, List<Writer> writers) {
+    public Book(String name, String image, Genre genre, int published, AgeOfBook ageOfBook, int ratingCount, double rating, List<Writer> writers) {
         this.name = name;
         this.image = image;
         this.genre = genre;
@@ -105,11 +105,11 @@ public class Book {
         this.genre = genre;
     }
 
-    public Date getPublished() {
+    public int getPublished() {
         return published;
     }
 
-    public void setPublished(Date published) {
+    public void setPublished(int published) {
         this.published = published;
     }
 

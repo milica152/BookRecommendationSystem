@@ -14,17 +14,14 @@ public class PersonInfoDTO {
     private ArrayList<SphereOfInterest> sphereOfInterest;
     private ArrayList<String> booksRead;
     private double maxPrice;
-    private Genre genre;
     private String bookName;    // only for checking recommendation, otherwise null
 
-
-    public PersonInfoDTO(int age, Age ageGroup, Gender gender, ArrayList<SphereOfInterest> sphereOfInterest, ArrayList<String> booksRead, double maxPrice, Genre genre, String bookName) {
+    public PersonInfoDTO(int age, Age ageGroup, Gender gender, ArrayList<SphereOfInterest> sphereOfInterest, ArrayList<String> booksRead, double maxPrice, String bookName) {
         this.ageGroup = ageGroup;
         this.gender = gender;
         this.sphereOfInterest = sphereOfInterest;
         this.booksRead = booksRead;
         this.maxPrice = maxPrice;
-        this.genre = genre;
         this.bookName = bookName;
         this.age = age;
     }
@@ -79,14 +76,6 @@ public class PersonInfoDTO {
 
     public void setMaxPrice(double maxPrice) {
         this.maxPrice = maxPrice;
-    }
-
-    public Genre getGenre() {
-        return genre;
-    }
-
-    public void setGenre(Genre genre) {
-        this.genre = genre;
     }
 
     public String getBookName() {

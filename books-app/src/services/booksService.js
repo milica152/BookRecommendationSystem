@@ -4,6 +4,10 @@ const getAll = async (searchParam) => await fetch(`http://localhost:8080/books/g
     })
     .then(response => response.json()).catch(error => console.error(error));
 
+const findByGenre = async (searchParam) => await fetch(`http://localhost:8080/books/findByGenre?param=` + searchParam, {
+        method: 'GET'
+    })
+    .then(response => response.json()).catch(error => console.error(error));
 
 const getRecommendation = async (recommendationDTO) => await fetch(`http://localhost:8080/books/getTopTen`, {
         method: 'POST',
@@ -16,4 +20,4 @@ const getRecommendation = async (recommendationDTO) => await fetch(`http://local
 
 
 
-export default {getAll, getRecommendation}
+export default {getAll, getRecommendation, findByGenre}

@@ -4,9 +4,15 @@ import booksService from "../services/booksService";
 const SearchBar = (props) => {
     const [recommendationDTO, setRecommendationDTO] = useState({age : 0, gender: "", sphereOfInterest: [], booksRead: [], maxPrice: 0, genre: ""});
     const [searchParameter, setSearchParameter] = useState("");
+    const [genre, setGenre] = useState("");
 
     const onSearch = async () => {
         const response = await booksService.getAll(searchParameter);
+        props.onchangecontent(response);
+    };
+
+    const onSerchByGenre = async () => {
+        const response = await booksService.findByGenre(genre);
         props.onchangecontent(response);
         console.log(response);
     };
@@ -18,13 +24,18 @@ const SearchBar = (props) => {
         const targetValue = e.target.value;
 
         setRecommendationDTO(prevState => {
-            return { ...prevState,  [targetName]: targetValue }
-        });
-    };
+                return { ...prevState,  [targetName]: targetValue }
+            });
+        };
+
+    const changeGenre = (e) => { setGenre(e.target.value); };
 
     const getRecommendation = async () => {
         const response = await booksService.getRecommendation(recommendationDTO);
         props.onchangecontent(response);
+        alert(response.length !==0
+            ? 'Perfect genre for you is ' + response[0].genre
+            : 'No suitable books for that data');
         console.log(response);
     };
 
@@ -54,26 +65,7 @@ const SearchBar = (props) => {
                 </li>
             </ul>
             <ul className="form">
-                <li>
-                    <label>Genre:</label>
-                    <select  onChange={changeRecommendation} name = "genre">
-                        <option disabled={true} selected={true}>Select genre</option>
-                        <option value="ROMANCE">ROMANCE</option>
-                        <option value="CHILDREN">CHILDREN</option>
-                        <option value="EDUCATION">EDUCATION</option>
-                        <option value="CRIME">CRIME</option>
-                        <option value="DRAMA">DRAMA</option>
-                        <option value="SCI_FI">SCIENCE FICTION</option>
-                        <option value="BIOGRAPHY">BIOGRAPHY</option>
-                        <option value="COMEDY">COMEDY</option>
-                        <option value="COOKING">COOKING</option>
-                        <option value="HISTORY">HISTORY</option>
-                        <option value="MUSIC">MUSIC</option>
-                        <option value="SPORT">SPORT</option>
-                        <option value="CLASSIC">CLASSIC</option>
-                    </select>
-                </li>
-                <li>
+                <li style={{paddingTop: '65px'}}>
                     <label>Maximum price:</label>
                     <input type="number" className="in-text" min={0} value = {recommendationDTO.maxPrice} name = "maxPrice" onChange={changeRecommendation}/>
                 </li>
@@ -85,14 +77,13 @@ const SearchBar = (props) => {
                         <label>Spheres of interests</label>
                         <label htmlFor="CELEBRITY"><input id="CELEBRITY" type="checkbox"  className="item" name = "CELEBRITY" onChange={changeRecommendationSpheres}/> CELEBRITY</label>
                         <label htmlFor="ADVENTURE"><input id="ADVENTURE" type="checkbox" name = "ADVENTURE" onChange={changeRecommendationSpheres}/> ADVENTURE</label>
-                        <label  htmlFor="TRUE_EVENTS"><input id="TRUE_EVENTS"  type="checkbox" name = "TRUE_EVENTS" onChange={changeRecommendationSpheres}/> TRUE_EVENTS</label>
-                        <label  htmlFor="FICTION"><input type="checkbox" name = "FICTION" id="FICTION"  onChange={changeRecommendationSpheres}/> FICTION</label>
-                        <label  htmlFor="HISTORY_OF_LITERATURE"><input type="checkbox" name = "HISTORY_OF_LITERATURE" id="HISTORY_OF_LITERATURE"  onChange={changeRecommendationSpheres}/> HISTORY_OF_LITERATURE</label>
-                        <label  htmlFor="FUN"><input type="checkbox" name = "FUN" id="FUN"  onChange={changeRecommendationSpheres}/> FUN</label>
-                        <label  htmlFor="FOOD"><input type="checkbox" id="FOOD" name = "FOOD" onChange={changeRecommendationSpheres}/> FOOD</label>
-                        <label  htmlFor="WORLD_LITERATURE"><input type="checkbox" id="WORLD_LITERATURE" name = "WORLD_LITERATURE" onChange={changeRecommendationSpheres}/> WORLD_LITERATURE</label>
-                        <label  htmlFor="LEARNING"><input type="checkbox" id="LEARNING" name = "LEARNING" onChange={changeRecommendationSpheres}/> LEARNING</label>
-
+                        <label htmlFor="TRUE_EVENTS"><input id="TRUE_EVENTS"  type="checkbox" name = "TRUE_EVENTS" onChange={changeRecommendationSpheres}/> TRUE_EVENTS</label>
+                        <label htmlFor="FICTION"><input type="checkbox" name = "FICTION" id="FICTION"  onChange={changeRecommendationSpheres}/> FICTION</label>
+                        <label htmlFor="HISTORY_OF_LITERATURE"><input type="checkbox" name = "HISTORY_OF_LITERATURE" id="HISTORY_OF_LITERATURE"  onChange={changeRecommendationSpheres}/> HISTORY_OF_LITERATURE</label>
+                        <label htmlFor="FUN"><input type="checkbox" name = "FUN" id="FUN"  onChange={changeRecommendationSpheres}/> FUN</label>
+                        <label htmlFor="FOOD"><input type="checkbox" id="FOOD" name = "FOOD" onChange={changeRecommendationSpheres}/> FOOD</label>
+                        <label htmlFor="WORLD_LITERATURE"><input type="checkbox" id="WORLD_LITERATURE" name = "WORLD_LITERATURE" onChange={changeRecommendationSpheres}/> WORLD_LITERATURE</label>
+                        <label htmlFor="LEARNING"><input type="checkbox" id="LEARNING" name = "LEARNING" onChange={changeRecommendationSpheres}/> LEARNING</label>
                     </li>
                 </ul>
                 </div>
@@ -117,7 +108,34 @@ const SearchBar = (props) => {
         </div>
 
         <div className="search-page" style={{borderWidth: '1px', borderColor: 'dimgrey', float : 'right'}}>
-            <input type="search" name="search-clients" className="in-search" onChange={changeSearchParam} value={searchParameter}/>
+            <ul className="form">
+                <li>
+                    <label>Genre:</label>
+                    <select  onChange={changeGenre} name = "genre">
+                        <option disabled={true} selected={true}>Select genre</option>
+                        <option value="ROMANCE">ROMANCE</option>
+                        <option value="CHILDREN">CHILDREN</option>
+                        <option value="EDUCATION">EDUCATION</option>
+                        <option value="CRIME">CRIME</option>
+                        <option value="DRAMA">DRAMA</option>
+                        <option value="SCI_FI">SCIENCE FICTION</option>
+                        <option value="BIOGRAPHY">BIOGRAPHY</option>
+                        <option value="COMEDY">COMEDY</option>
+                        <option value="COOKING">COOKING</option>
+                        <option value="HISTORY">HISTORY</option>
+                        <option value="MUSIC">MUSIC</option>
+                        <option value="SPORT">SPORT</option>
+                        <option value="CLASSIC">CLASSIC</option>
+                    </select>
+                </li>
+            </ul>
+            <span style={{paddingLeft: '30px'}} >
+                <button className="btn green" onClick={onSerchByGenre}> Search </button>
+            </span>
+        </div>
+
+        <div className="search-page" style={{borderWidth: '1px', borderColor: 'dimgrey', float : 'right', marginRight: '20px'}}>
+            <input type="search" placeholder="Enter name" name="search-clients" className="in-search" onChange={changeSearchParam} value={searchParameter}/>
             <span style={{paddingLeft: '30px'}} >
                 <button className="btn green" onClick={onSearch}> Search </button>
             </span>
