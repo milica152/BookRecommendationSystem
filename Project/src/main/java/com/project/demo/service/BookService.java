@@ -20,23 +20,6 @@ public class BookService {
     BookRepository bookRepository;
 
     public List<Book> getTopTen(PersonInfoDTO personInfoDTO) {
-        // TODO --- forward chaining treci nivo dodas da zakljucuje preference na osnovu ageGroup,
-        //  dakle ukoliko u listi sfera interesovanja nema ta odredjena za dati uzrast i ukoliko je uzrast dati
-        //  dodaj tu preferencu u listu interesovanja i onda ce se okinuti jos jedan prolaz pravila (treci krug
-        //  chaining-a)
-
-        // TODO - mozda preko accumulate da uradim knjige koje je korisnik procitao, kao from accumulate Book
-        //  (necemo ubaciti ovaj put genre) pa izbrojis koji zanr preovladava u listi (neki checkboxevi ali u
-        //  ogranicenom prostoru), taj zanr povecaj za 2
-
-        // TODO - ako stignem, uraditi validaciju preko pravila, mozda da kada se naidje na nesto sto je
-        //  pogresno da se automatski izbaci GenreScores iz radne memorije i mozda ubaci poruka o gresci
-        //  (baca hendlovanu gresku??)
-
-        // TODO - mozda spajati vise spheresOfInterests kao u predef. projektu pa da se spojene ponasaj drugacije
-
-        // TODO - uzeti onda u obzir i ageOfBook zajedno sa ageGroup,
-        //  takodje uzeti u obzir i ocenu knjiga --- OBAVEZNO FORWARD CHAINING NA 3 NIVOA, to je uslov za polaganje
 
         HashMap<Genre, Integer> innerMap = new HashMap<>();
         innerMap.put(Genre.ROMANCE, 0);

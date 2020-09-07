@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ab31bad-5c65-42a9-bc40-873c664e7cc6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Project/src/main/resources/rules/concludingPreferences.drl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Predlog projekta iz predmeta SBNZ.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Predlog projekta iz predmeta SBNZ.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project/src/main/java/com/project/demo/dto/PersonInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Project/src/main/java/com/project/demo/dto/PersonInfoDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project/src/main/java/com/project/demo/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Project/src/main/java/com/project/demo/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project/src/main/resources/rules/ageOfBook.drl" beforeDir="false" afterPath="$PROJECT_DIR$/../Project/src/main/resources/rules/ageOfBook.drl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project/src/main/resources/rules/genreScoresRules.drl" beforeDir="false" afterPath="$PROJECT_DIR$/../Project/src/main/resources/rules/genreScoresRules.drl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,8 +62,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/SearchBar.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="136" column="49" lean-forward="true" selection-start-line="136" selection-start-column="49" selection-end-line="136" selection-end-column="49" />
+            <state relative-caret-position="142">
+              <caret line="129" column="21" lean-forward="true" selection-start-line="129" selection-start-column="21" selection-end-line="129" selection-end-column="21" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -231,7 +225,7 @@
       <workItem from="1599349748267" duration="20935000" />
       <workItem from="1599412373288" duration="17476000" />
       <workItem from="1599476415093" duration="2361000" />
-      <workItem from="1599485842344" duration="1913000" />
+      <workItem from="1599485842344" duration="1916000" />
     </task>
     <task id="LOCAL-00001" summary="Frontend page and getting data from backend done">
       <created>1599412792711</created>
@@ -251,10 +245,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62937000" />
+    <option name="totallyTimeSpent" value="62940000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -407,8 +402,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SearchBar.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="136" column="49" lean-forward="true" selection-start-line="136" selection-start-column="49" selection-end-line="136" selection-end-column="49" />
+        <state relative-caret-position="142">
+          <caret line="129" column="21" lean-forward="true" selection-start-line="129" selection-start-column="21" selection-end-line="129" selection-end-column="21" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
